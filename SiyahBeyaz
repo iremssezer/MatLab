@@ -13,3 +13,12 @@ title('siyah beyaz');
 subplot(2,2,4);
 imhist(r);
 title('histogram');
+
+
+figure;
+subplot(2,2,1);imshow(r);
+subplot(2,2,2);imhist(r);title('imhist');
+r1=imadjust(r);/*gri görüntüde kontrastlık ayarı
+bplot(2,2,3);imshow(r1);
+title('imadjust');
+bplot(2,2,4)
