@@ -19,6 +19,19 @@ figure;
 subplot(2,2,1);imshow(r);
 subplot(2,2,2);imhist(r);title('imhist');
 r1=imadjust(r);/*gri görüntüde kontrastlık ayarı
-bplot(2,2,3);imshow(r1);
+subplot(2,2,3);imshow(r1);
 title('imadjust');
-bplot(2,2,4)
+subplot(2,2,4);imhist(r1);
+
+figure;
+subplot(2,2,1);imshow(r);
+subplot(2,2,2);imhist(r);title('imhist');
+r2=histeq(r);
+subplot(2,2,3);imshow(r2);title('histeq');
+subplot(2,2,4);imhist(r2);
+
+figure;
+subplot(2,2,1);imshow(r);title('orjinal');
+subplot(2,2,2);imshow(sb);title('siyah beyaz');
+sbn=1-sb;
+subplot(2,2,3);imshow(sbn);title('siyah beyaz negatif');
