@@ -1,0 +1,15 @@
+clc;clear all;
+r=imread('coins.png');
+subplot(2,2,1);
+imshow(r);
+title('orjinal');
+n=255-r;
+subplot(2,2,2);imshow(n);
+title('negatif');
+sb=im2bw(r);
+subplot(2,2,3);
+imshow(sb);
+title('siyah beyaz');
+subplot(2,2,4);
+imhist(r);
+title('histogram');
