@@ -21,3 +21,8 @@ subplot(2,2,4);imshow(gri);title('gri');
 
 
 
+figure;
+subplot(1,2,1);imshow(sb);title('normalsb');
+subplot(1,2,2);imshow(sb1);title('esikli sb'); /*esikli
+
+
