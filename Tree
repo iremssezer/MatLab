@@ -1,0 +1,9 @@
+clc;clear all;
+r=imread('trees.tif');imshow(r);
+
+figure
+load trees
+image(X)
+rgb=ind2rgb(X,map);
+figure
+imshow(rgb); /*renkli ağaç 3 kanallı rgb dönüşümü olan görüntü
