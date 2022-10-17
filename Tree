@@ -7,3 +7,17 @@ image(X)
 rgb=ind2rgb(X,map);
 figure
 imshow(rgb); /*renkli ağaç 3 kanallı rgb dönüşümü olan görüntü
+
+clc;clear all;
+r=imread('123.jpg');
+rn=255-r;
+figure,imshow(rn);
+sb=im2bw(r);
+gri=rgb2gray(r);
+subplot(2,2,1);imshow(r);title('orjinal');
+subplot(2,2,2);imshow(sb);title('siyah beyaz');
+subplot(2,2,3);imshow(rn);title('negatif');
+subplot(2,2,4);imshow(gri);title('gri');
+
+
+
