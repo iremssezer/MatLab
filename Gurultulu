@@ -1,0 +1,11 @@
+ clc;clear all;
+r=imread('cameraman.tif');
+r1=imnoise(r,'salt & pepper',0.05);
+subplot(2,2,1);imshow(r);title('orjinal');
+subplot(2,2,2);imshow(r1);title('gürültülü');
+
+rm=medfilt2(r1);
+subplot(2,2,3);imshow(rm);title('medyan filtre');
+h=fspecial('average',3);
+ra=imfilter(r1,h);
+subplot(2,2,4);imshow(ra);title('avarage filtre');
