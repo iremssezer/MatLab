@@ -1,0 +1,35 @@
+clc;clear all;
+r=imread('coins.png');
+sb=im2bw(r);
+esik=graythresh(r);
+sbl=im2bw(r,esik);
+subplot(2,2,1);imshow(r);title('orijinal');
+subplot(2,2,2);imshow(sb);title('siyah beyaz esiksiz');
+subplot(2,2,3);imshow(sbl);title('siyah beyaz esikli');//esik değeri ile beraber kullandığımız dönüşüm
+doldur=imfill(sb,'holes');
+subplot(2,2,4);imshow(sbl);title('doldurulmus goruntu');//aradaki boşluklar kapatılmış oldu
+[etiket,adet]=bwlabel(sb);//etiketleme işlemi yaptı
+
+üstteki iki satr hatalı
+subplot(2,2,4);imshow(doldur);title('doldurulmus goruntu');
+
+[etiket,adet]=bwlabel(sb);
+[etiket1,adet1]=bwlabel(doldur);
+rgb=label2rgb(etiket);
+rgb1=label2rgb(etiket1);
+
+figure;
+subplot(2,2,1);imshow(r);title('orijinal');
+subplot(2,2,3);imshow(rgb);title('rgb');
+subplot(2,2,4);imshow(rgb1);title('rgb1');
+
+
+kenar=bwperim(sb);
+kenar1=bwperim(doldur);
+kenar2=edge(doldur,'sobel');
+figure;
+subplot(2,2,1);imshow(r);title('orjinal');
+subplot(2,2,2);imshow(kenar2);title('kenar sobel');
+subplot(2,2,3);imshow(kenar);title('kenar orijinal');
+subplot(2,2,4);imshow(kenar1);title('kenar doldurulmuş');
+
