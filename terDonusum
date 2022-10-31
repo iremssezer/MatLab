@@ -1,6 +1,6 @@
 clc;clear all;
 r=imread('cameraman.tif');
-f=fft(r);
+f=fft2(r);
 fspecial('sobel');
 rfiltre=imfilter(f,h);// filtrelenmiş görüntü
     //ters dönüşüm yapmalıyız
