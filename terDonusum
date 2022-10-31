@@ -1,0 +1,10 @@
+clc;clear all;
+r=imread('cameraman.tif');
+f=fft(r);
+fspecial('sobel');
+rfiltre=imfilter(f,h);// filtrelenmiş görüntü
+    //ters dönüşüm yapmalıyız
+ft=ifft2(rfiltre);
+subplot(2,2,1);imshow(r);title('orijinal');
+subplot(2,2,2);imshow(f);title('frekans dönüşümü');
+subplot(2,2,3);imshow(ft);title('uzaysal bölge');
