@@ -1,0 +1,17 @@
+clc;clear all;
+r= imread('rice.png');
+
+
+r1=imread('coins.png');
+r1=imresize(r1,[256,256]);
+toplama=r+r1;
+t1=imadd(r,r1);
+cikarma=r-r1;
+c1=imsubtract(r,r1);
+
+subplot(3,2,1);imshow(r);title('pirinç');
+subplot(3,2,2);imshow(r1);title('para');
+subplot(3,2,3);imshow(toplama);title('r+r1');
+subplot(3,2,4);imshow(t1);title('r add r1');
+subplot(3,2,5);imshow(cikarma);title('r - r1');
+subplot(3,2,6);imshow(c1);title('r sub r1');
