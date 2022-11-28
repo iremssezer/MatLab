@@ -1,0 +1,23 @@
+clc;clear all;
+r= imread('rice.png');
+
+
+r1=imread('coins.png');
+r1=imresize(r1,[256,256]);
+sb=im2bw(r);
+sb1=im2bw(r1);
+toplama=r+r1;
+t1=imadd(r,r1);
+cikarma=r-r1;
+c1=imsubtract(r,r1);
+
+rand=and(sb,sb1);
+ror=or(sb,sb1);
+rxor=xor(sb,sb1);
+figure;
+subplot(3,2,1);imshow(sb);title('pirinç');
+subplot(3,2,2);imshow(sb1);title('para');
+subplot(3,2,3);imshow(rand);title('rand');
+subplot(3,2,4);imshow(ror);title('r or');
+subplot(3,2,5);imshow(rxor);title('r xor');
+
