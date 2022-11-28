@@ -1,0 +1,11 @@
+clc;clear all;
+r=imread('tas_devri.jpg');
+rr=r(:,:,1);
+rg=r(:,:,2);%2. matrisi
+rb=r(:,:,3);
+
+subplot(2,3,1);imshow(r);title('orijinal');
+subplot(2,3,4);imshow(rr);title('kırmızı');
+subplot(2,3,5);imshow(rg);title('yesil');
+subplot(2,3,6);imshow(rb);title('mavi');
+
