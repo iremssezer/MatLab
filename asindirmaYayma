@@ -1,0 +1,23 @@
+clc;clear all;
+r= imread('rice.png');
+ye=strel('line',3,20);%yapilandirma elemani
+yayma=imdilate(r,ye);
+asindirma=imerode(r,ye);
+acma=imopen(r,ye);
+kapama=imclose(r,ye);
+subplot(2,2,1);imshow(r);title('orijinal');
+subplot(2,2,2);imshow(yayma);title('yayma');
+subplot(2,2,3);imshow(asindirma);title('asindirma');
+subplot(2,2,4);imshow(acma);title('acma');
+subplot(2,2,5);imshow(kapama);title('kapama');
+
+
+sb=im2bw(r);
+iskelet=bwmorph(sb,'thin');%iskelet
+figure;
+
+subplot(2,2,1);imshow(r);title('orijinal');
+subplot(2,2,2);imshow(iskelet);title('iskelet');
+subplot(2,2,3);imshow(asindirma);title('asindirma');
+subplot(2,2,4);imshow(acma);title('acma');
+subplot(2,2,5);imshow(kapama);title('kapama');
